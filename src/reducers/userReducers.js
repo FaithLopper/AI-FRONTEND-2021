@@ -18,6 +18,18 @@ import {
     CUSDELE_PAYMENT_REQUEST,
     CUSDELE_PAYMENT_SUCCESS,
     CUSDELE_PAYMENT_FAIL,
+    LIST_D_NOTI_REQUEST,
+    LIST_D_NOTI_SUCCESS,
+    LIST_D_NOTI_FAIL,
+    LIST_M_NOTI_REQUEST,
+    LIST_M_NOTI_SUCCESS,
+    LIST_M_NOTI_FAIL,
+    UPDATE_D_NOTI_REQUEST,
+    UPDATE_D_NOTI_SUCCESS,
+    UPDATE_D_NOTI_FAIL,
+    UPDATE_M_NOTI_REQUEST,
+    UPDATE_M_NOTI_SUCCESS,
+    UPDATE_M_NOTI_FAIL,
 } from "../constants/userConstants"
 
 export const userLoginReducer = (state = {}, action) => {
@@ -43,9 +55,9 @@ export const userRegisterReducer = (state = {}, action) => {
 
 export const CusProfileReducer = (state = {}, action) => {
     switch (action.type) {
-        case CUSGET_PROFILE_REQUEST: return { ...state, loading: true }
-        case CUSGET_PROFILE_SUCCESS: return { loading: false, profile: action.payload }
-        case CUSGET_PROFILE_FAIL: return { loading: false, profile: action.payload }
+        case CUSGET_PROFILE_REQUEST: return { ...state, getloading: true }
+        case CUSGET_PROFILE_SUCCESS: return { getloading: false, profile: action.payload }
+        case CUSGET_PROFILE_FAIL: return { getloading: false, profile: action.payload }
         default: return state
     }
 }
@@ -74,6 +86,43 @@ export const cusDelePaymentReducer = (state = {}, action) => {
         case CUSDELE_PAYMENT_REQUEST: return { deleLoading: true }
         case CUSDELE_PAYMENT_SUCCESS: return {deleLoading: false, deleSuccess: action.payload }
         case CUSDELE_PAYMENT_FAIL: return { deleLoading: false, deleFail: action.payload }
+        default: return state
+    }
+}
+
+
+export const listDNotiReducer = (state = {}, action) => {
+    switch (action.type) {
+        case LIST_D_NOTI_REQUEST: return { Dloading: true }
+        case LIST_D_NOTI_SUCCESS: return { Dloading: false, DrEs: action.payload }
+        case LIST_D_NOTI_FAIL: return { Dloading: false, DrEs: action.payload }
+        default: return state
+    }
+}
+
+export const listMNotiReducer = (state = {}, action) => {
+    switch (action.type) {
+        case LIST_M_NOTI_REQUEST: return { Mloading: true }
+        case LIST_M_NOTI_SUCCESS: return { Mloading: false, MrEs: action.payload }
+        case LIST_M_NOTI_FAIL: return { Mloading: false, MrEs: action.payload }
+        default: return state
+    }
+}
+
+export const updateDNotiReducer = (state = {}, action) => {
+    switch (action.type) {
+        case UPDATE_D_NOTI_REQUEST: return { uDloading: true }
+        case UPDATE_D_NOTI_SUCCESS: return { uDloading: false, uDrEs: action.payload }
+        case UPDATE_D_NOTI_FAIL: return { uDloading: false, uDerr: action.payload }
+        default: return state
+    }
+}
+
+export const updateMNotiReducer = (state = {}, action) => {
+    switch (action.type) {
+        case UPDATE_M_NOTI_REQUEST: return { uMloading: true }
+        case UPDATE_M_NOTI_SUCCESS: return { uMloading: false, uMrEs: action.payload }
+        case UPDATE_M_NOTI_FAIL: return { uMloading: false, uMerr: action.payload }
         default: return state
     }
 }

@@ -2,7 +2,10 @@ import thunk from "redux-thunk"
 import {importImageReducer,updateImageReducer} from "./reducers/imageReducers"
 import { createStore, combineReducers, applyMiddleware } from "redux"
 import { composeWithDevTools } from "redux-devtools-extension"
-import { userLoginReducer, userRegisterReducer, CusProfileReducer, UpdateProfileReducer, getPaymentReducer, cusDelePaymentReducer } from "./reducers/userReducers"
+import { userLoginReducer, 
+    userRegisterReducer, CusProfileReducer, UpdateProfileReducer, 
+    getPaymentReducer, cusDelePaymentReducer, listDNotiReducer, listMNotiReducer,
+    updateDNotiReducer, updateMNotiReducer } from "./reducers/userReducers"
 
 const reducer= combineReducers({
     userLogin :userLoginReducer,
@@ -13,6 +16,10 @@ const reducer= combineReducers({
     UpdateProfile: UpdateProfileReducer,
     getPayment: getPaymentReducer,
     delePayment: cusDelePaymentReducer,
+    listD_Noti: listDNotiReducer,
+    listM_Noti: listMNotiReducer,
+    updateD_noti: updateDNotiReducer,
+    updateM_noti: updateMNotiReducer,
 
 })
 

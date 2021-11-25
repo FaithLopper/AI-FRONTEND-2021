@@ -6,11 +6,13 @@ import ProfileScreen from "./Screens/ProfileScreen";
 import Slidebar from "./components/layout/Slidebar";
 import Main from "./components/Main";
 import Mainnav from "./components/layout/Mainnav";
-import Footer from "./components/layout/Footer";
 import Textract from "./Screens/Textract";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "./actions/userActions";
 import jwt_decode from "jwt-decode";
+import ReceiptManage from "./Screens/ReceiptManageScreen";
+import DailySetupScreen from "./Screens/DailySetupScreen";
+import MonthlySetupScreen from "./Screens/MonthlySetupScreen";
 function App() {
 
   const dispatch = useDispatch()
@@ -42,8 +44,10 @@ function App() {
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
               <Route path="/customerprofile" element={<ProfileScreen />} />
+              <Route path="/receiptmanage" element={<ReceiptManage />} />
+              <Route path="/daily" element={<DailySetupScreen />} />
+              <Route path="/monthly" element={<MonthlySetupScreen />} />
             </Routes>
-            <Footer />
           </div>
         </div>
       </div>

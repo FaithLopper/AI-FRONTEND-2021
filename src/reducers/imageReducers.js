@@ -8,10 +8,7 @@ import {
   IMAGE_UPDATE_REQUEST,
   IMAGE_UPDATE_SUCCESS,
 } from "../constants/uploadImageConstant";
-import {
-  IMAGE_IMPORT_FAIL,
-  IMAGE_IMPORT_SUCCESS,
-} from "../constants/uploadImageConstant";
+
 
 export const importImageReducer = (state = { upImage: null }, action) => {
   switch (action.type) {

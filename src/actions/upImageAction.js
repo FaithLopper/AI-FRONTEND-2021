@@ -1,6 +1,4 @@
 import axios from "axios";
-import Bill1 from "../data/Bill1";
-import update1 from "../data/update1";
 import {
   IMAGE_UPLOAD_FAIL,
   IMAGE_UPLOAD_REQUEST,
